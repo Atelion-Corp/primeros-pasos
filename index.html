@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelion — Jornada Estratégica 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- place logo.png in this folder (same dir as index.html) -->
+
+  <nav class="nav" id="main-nav">
+    <div class="nav-brand">
+      <img src="logo_atelion.png" alt="Atelion" class="nav-logo nav-logo-light" onerror="this.style.display='none'">
+      <img src="logo_atelion_black.png" alt="Atelion" class="nav-logo nav-logo-dark" onerror="this.style.display='none'">
+      <span class="nav-brand-text">ATELION</span>
+    </div>
+    <div class="nav-controls">
+      <span class="slide-counter"><span id="current">1</span> / <span id="total">26</span></span>
+      <button class="nav-btn" id="prev-btn" onclick="prevSlide()">&#8592;</button>
+      <button class="nav-btn" id="next-btn" onclick="nextSlide()">&#8594;</button>
+    </div>
+  </nav>
+
+  <div class="progress-bar">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+
+  <div class="slides-container" id="slides-container">
+
+    <!-- 01 INTRO — logo solo -->
+    <div class="slide slide-intro active" data-index="1" data-dark="true">
+      <div class="intro-logo-wrap">
+        <img src="logo_atelion_black.png" alt="Atelion" class="intro-logo" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <!-- 02 PORTADA OSCURA -->
+    <div class="slide slide-portada-dark" data-index="2" data-dark="true">
+      <div class="pd-content">
+        <div class="pd-badge">Jornada Estratégica Interna &middot; Mayo 2026</div>
+        <h1 class="pd-title">ATELION</h1>
+        <p class="pd-sub">Explorando fronteras tecnológicas, procesos de excelencia<br>y el futuro de nuestra arquitectura digital.</p>
+      </div>
+    </div>
+
+    <!-- 03 AGENDA -->
+    <div class="slide slide-agenda" data-index="3">
+      <h2 class="agenda-title">AGENDA</h2>
+      <div class="agenda-grid">
+        <div class="agenda-card">
+          <span class="ag-num">01</span>
+          <div class="ag-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><line x1="12" y1="11" x2="12" y2="14"/></svg>
+          </div>
+          <div class="ag-name">Branding</div>
+          <div class="ag-desc">Identidad y percepción en el mercado.</div>
+        </div>
+        <div class="agenda-card">
+          <span class="ag-num">02</span>
+          <div class="ag-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="ag-name">Benchmark</div>
+          <div class="ag-desc">Análisis de referentes y competencia.</div>
+        </div>
+        <div class="agenda-card">
+          <span class="ag-num">03</span>
+          <div class="ag-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div class="ag-name">Arquitectura</div>
+          <div class="ag-desc">Escalabilidad y mantenibilidad.</div>
+        </div>
+        <div class="agenda-card">
+          <span class="ag-num">04</span>
+          <div class="ag-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><polyline points="3 6 4 7 6 5"/><polyline points="3 12 4 13 6 11"/><polyline points="3 18 4 19 6 17"/></svg>
+          </div>
+          <div class="ag-name">Estandarización</div>
+          <div class="ag-desc">Procesos y convenciones internas.</div>
+        </div>
+        <div class="agenda-card">
+          <span class="ag-num">05</span>
+          <div class="ag-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          </div>
+          <div class="ag-name">Automatización</div>
+          <div class="ag-desc">Eficiencia operativa mediante IA.</div>
+        </div>
+        <div class="agenda-card">
+          <span class="ag-num">06</span>
+          <div class="ag-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="ag-name">Recursos web</div>
+          <div class="ag-desc">Stack y herramientas del equipo.</div>
+        </div>
+        <div class="agenda-card">
+          <span class="ag-num">07</span>
+          <div class="ag-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <div class="ag-name">Futuro</div>
+          <div class="ag-desc">Tendencias y oportunidades Atelion.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 BRANDING — A Revisar -->
+    <div class="slide" data-index="4">
+      <div class="section-tag">01 &mdash; Branding</div>
+      <div class="slide-header">
+        <h2>Percepción actual vs. deseada</h2>
+      </div>
+      <div class="branding-review-layout">
+        <div class="br-left">
+          <span class="br-badge">A revisar</span>
+          <div class="br-items">
+            <div class="br-item">
+              <a href="https://atelion.cl" target="_blank" class="br-item-title br-item-link">Atelion.cl ↗</a>
+              <div class="br-item-desc">Claridad, propuesta y primera impresión.</div>
+            </div>
+            <div class="br-item">
+              <div class="br-item-title">Redes y canales</div>
+              <div class="br-item-links">
+                <a href="https://www.linkedin.com/company/atelion-tech/?viewAsMember=true" target="_blank" class="br-social-link">LinkedIn</a>
+                <a href="https://www.facebook.com/profile.php?id=61589335896046" target="_blank" class="br-social-link">Facebook</a>
+                <a href="https://wa.me/56984627582" target="_blank" class="br-social-link">WhatsApp</a>
+                <a href="mailto:atelioncorp@gmail.com" class="br-social-link">Gmail</a>
+                <span class="br-social-plain">Instagram</span>
+              </div>
+            </div>
+            <div class="br-item">
+              <div class="br-item-title">Sistema visual</div>
+              <div class="br-item-desc">Estilo, tipografías, colores y tono.</div>
+            </div>
+          </div>
+        </div>
+        <div class="br-right">
+          <div class="br-questions-block">
+            <div class="br-questions-label">Preguntas para comentar</div>
+            <div class="br-questions-list">
+              <div class="br-question">¿Qué impresión da Atelion?</div>
+              <div class="br-question">¿Se entiende rápido qué hacemos?</div>
+              <div class="br-question">¿Qué deberíamos reforzar primero?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 05 SISTEMA VISUAL -->
+    <div class="slide slide-sysvis" data-index="5" data-dark="true">
+      <div class="section-tag sv-tag">01 &mdash; Branding</div>
+      <div class="sv-content">
+
+        <div class="sv-section">
+          <div class="sv-section-title">Paleta de colores core</div>
+          <div class="sv-swatches">
+            <div class="sv-swatch">
+              <div class="sv-color" style="background:#7FD0F9;box-shadow:0 0 20px rgba(127,208,249,0.35)"></div>
+              <div class="sv-hex">#7FD0F9</div>
+              <div class="sv-cname">Primary Cyan</div>
+              <div class="sv-crole">Acciones principales</div>
+            </div>
+            <div class="sv-swatch">
+              <div class="sv-color sv-color-border" style="background:#101415;"></div>
+              <div class="sv-hex">#101415</div>
+              <div class="sv-cname">Dark Navy</div>
+              <div class="sv-crole">Fondo base</div>
+            </div>
+            <div class="sv-swatch">
+              <div class="sv-color" style="background:#272A2C;"></div>
+              <div class="sv-hex">#272A2C</div>
+              <div class="sv-cname">Surface High</div>
+              <div class="sv-crole">Cards y componentes</div>
+            </div>
+            <div class="sv-swatch">
+              <div class="sv-color" style="background:#BBC7E0;"></div>
+              <div class="sv-hex">#BBC7E0</div>
+              <div class="sv-cname">Tertiary Mist</div>
+              <div class="sv-crole">Metadata secundaria</div>
+            </div>
+            <div class="sv-swatch">
+              <div class="sv-color" style="background:#FFB4AB;"></div>
+              <div class="sv-hex">#FFB4AB</div>
+              <div class="sv-cname">System Alert</div>
+              <div class="sv-crole">Errores y alertas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sv-section">
+          <div class="sv-section-title">Tipografía</div>
+          <div class="sv-typo-rows">
+            <div class="sv-typo-row">
+              <span class="sv-typo-label">Display</span>
+              <span class="sv-typo-sample sv-jakarta-display">Atelion Engineering</span>
+              <span class="sv-typo-spec">Plus Jakarta Sans · 800</span>
+            </div>
+            <div class="sv-typo-row">
+              <span class="sv-typo-label">Headline</span>
+              <span class="sv-typo-sample sv-jakarta-headline">Soluciones de ingeniería digital</span>
+              <span class="sv-typo-spec">Plus Jakarta Sans · 700</span>
+            </div>
+            <div class="sv-typo-row">
+              <span class="sv-typo-label">Body</span>
+              <span class="sv-typo-sample sv-inter-body">Desde la idea hasta producción con criterio técnico y foco en resultados.</span>
+              <span class="sv-typo-spec">Inter · 400</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sv-section">
+          <div class="sv-section-title">Exploraciones de estilo</div>
+          <div class="sv-styles-grid">
+            <div class="sv-style-card sv-glass">
+              <div class="sv-style-name">Glassmorphism</div>
+              <div class="sv-style-desc">Transparencia con blur de fondo</div>
+              <code class="sv-style-code">backdrop-blur</code>
+            </div>
+            <div class="sv-style-card sv-atmos">
+              <div class="sv-style-name">Atmospheric</div>
+              <div class="sv-style-desc">Gradientes de profundidad tonal</div>
+              <code class="sv-style-code">gradient-to-br</code>
+            </div>
+            <div class="sv-style-card sv-blueprint">
+              <div class="sv-style-name">Blueprint</div>
+              <div class="sv-style-desc">Grids técnicos arquitectónicos</div>
+              <code class="sv-style-code">pattern-dots</code>
+            </div>
+            <div class="sv-style-card sv-neon">
+              <div class="sv-style-name">Neon Accents</div>
+              <div class="sv-style-desc">Glow sobre CTAs primarios</div>
+              <code class="sv-style-code">shadow-primary-glow</code>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- 07 BENCHMARK — Intro (era 06) -->
+    <div class="slide slide-highlight" data-index="6">
+      <div class="section-tag">02 &mdash; Benchmark</div>
+      <div class="highlight-content">
+        <blockquote class="big-quote">
+          "Estudiar referentes no es copiar.<br>Es elevar el criterio."
+        </blockquote>
+        <p class="highlight-sub">Revisamos empresas que hacen bien lo que nosotros queremos hacer bien.</p>
+      </div>
+    </div>
+
+    <!-- 08 BENCHMARK — Referentes (era 07) -->
+    <div class="slide" data-index="7">
+      <div class="section-tag">02 &mdash; Benchmark</div>
+      <div class="slide-header">
+        <h2>Referentes observados</h2>
+        <p class="slide-sub">¿Qué hacen bien y qué podemos aprender?</p>
+      </div>
+      <div class="table-container">
+        <table class="bench-table">
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Qué hacen bien</th>
+              <th>Aprendizaje clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://linear.app" target="_blank" class="bench-link"><strong>Linear</strong></a></td>
+              <td>Producto claro, comunicación sobria, diseño de nivel world-class</td>
+              <td>Sobriedad + detalle = percepción premium</td>
+            </tr>
+            <tr>
+              <td><a href="https://vercel.com" target="_blank" class="bench-link"><strong>Vercel</strong></a></td>
+              <td>Docs perfectas, DX excelente, marca técnica con carácter</td>
+              <td>La experiencia técnica ES la marca</td>
+            </tr>
+            <tr>
+              <td><a href="https://37signals.com" target="_blank" class="bench-link"><strong>37signals</strong></a></td>
+              <td>Postura clara, comunicación directa, rechazo al ruido</td>
+              <td>Tener postura propia diferencia</td>
+            </tr>
+            <tr>
+              <td><a href="https://stripe.com" target="_blank" class="bench-link"><strong>Stripe</strong></a></td>
+              <td>Documentación como producto, claridad absoluta ante todo</td>
+              <td>Claridad construye confianza</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 09 BENCHMARK — Qué adaptar (era 08) -->
+    <div class="slide" data-index="8">
+      <div class="section-tag">02 &mdash; Benchmark</div>
+      <div class="slide-header">
+        <h2>Qué vale adaptar para Atelion</h2>
+      </div>
+      <div class="two-col-layout">
+        <div class="col-block col-yes">
+          <div class="col-block-title">&#10003; Adaptar</div>
+          <ul class="block-list">
+            <li>Claridad en propuesta de valor</li>
+            <li>Documentación como activo de marca</li>
+            <li>Tono técnico sin ser frío</li>
+            <li>Diseño sobrio con detalles cuidados</li>
+            <li>Consistencia visual en todos los puntos de contacto</li>
+          </ul>
+        </div>
+        <div class="col-block col-no">
+          <div class="col-block-title">&#10007; No encaja</div>
+          <ul class="block-list">
+            <li>Estética de startup hype</li>
+            <li>Mensajes vacíos de marketing</li>
+            <li>Complejidad artificial en UI</li>
+            <li>Tono demasiado informal o irreverente</li>
+            <li>Escalar por escalar sin criterio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 ARQUITECTURA — Principios (era 09) -->
+    <div class="slide" data-index="9">
+      <div class="section-tag">03 &mdash; Arquitectura</div>
+      <div class="slide-header">
+        <h2>Principios que no negociamos</h2>
+      </div>
+      <div class="principles-grid">
+        <div class="principle-item">
+          <div class="p-number">01</div>
+          <div class="p-content">
+            <div class="p-title">Separación de responsabilidades</div>
+            <div class="p-desc">Cada componente hace una sola cosa. Bien.</div>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="p-number">02</div>
+          <div class="p-content">
+            <div class="p-title">Observabilidad desde el día uno</div>
+            <div class="p-desc">Si no podés medirlo, no podés operarlo.</div>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="p-number">03</div>
+          <div class="p-content">
+            <div class="p-title">Seguridad como capa, no afterthought</div>
+            <div class="p-desc">Autenticación, autorización y secrets desde el diseño.</div>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="p-number">04</div>
+          <div class="p-content">
+            <div class="p-title">Multi-tenant pensado temprano</div>
+            <div class="p-desc">Agregar multi-tenancy después es costoso. Diseñarlo antes no.</div>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="p-number">05</div>
+          <div class="p-content">
+            <div class="p-title">Mantenibilidad sobre optimización prematura</div>
+            <div class="p-desc">Código legible primero. Optimizar cuando haya evidencia.</div>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="p-number">06</div>
+          <div class="p-content">
+            <div class="p-title">Continuidad operativa</div>
+            <div class="p-desc">Backup, rollback, CI/CD. No es opcional en producción.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 ARQUITECTURA — Errores (era 10) -->
+    <div class="slide" data-index="10">
+      <div class="section-tag">03 &mdash; Arquitectura</div>
+      <div class="slide-header">
+        <h2>Errores que cuestan caro</h2>
+        <p class="slide-sub">Decisiones técnicas que se pagan tarde</p>
+      </div>
+      <div class="cards-grid cards-3">
+        <div class="card card-warn">
+          <div class="card-title">Acoplamiento alto</div>
+          <div class="card-body">Cambiar una cosa rompe todo lo demás. Sin modularidad no hay velocidad.</div>
+        </div>
+        <div class="card card-warn">
+          <div class="card-title">Sin entornos separados</div>
+          <div class="card-body">Dev, staging y prod mezclados. Los accidentes son inevitables.</div>
+        </div>
+        <div class="card card-warn">
+          <div class="card-title">Deuda técnica invisible</div>
+          <div class="card-body">Sin métricas de calidad, la deuda crece sin que nadie la vea.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 ARQUITECTURA — Ventaja (era 11) -->
+    <div class="slide slide-highlight" data-index="11">
+      <div class="section-tag">03 &mdash; Arquitectura</div>
+      <div class="highlight-content">
+        <blockquote class="big-quote">
+          "La arquitectura no es un detalle técnico.<br>Es una ventaja competitiva."
+        </blockquote>
+        <div class="highlight-points">
+          <span class="h-point">Velocidad de iteración</span>
+          <span class="h-sep">&middot;</span>
+          <span class="h-point">Escalabilidad real</span>
+          <span class="h-sep">&middot;</span>
+          <span class="h-point">Menor costo operativo</span>
+          <span class="h-sep">&middot;</span>
+          <span class="h-point">Menos bugs en producción</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13 ESTANDARIZACIÓN — Qué estandarizar (era 12) -->
+    <div class="slide" data-index="12">
+      <div class="section-tag">04 &mdash; Estandarización</div>
+      <div class="slide-header">
+        <h2>¿Qué conviene estandarizar?</h2>
+      </div>
+      <div class="two-col-layout">
+        <div class="std-col">
+          <div class="std-category">Desarrollo</div>
+          <ul class="std-list">
+            <li>Estructura de proyectos y repos</li>
+            <li>Nomenclatura de branches y commits</li>
+            <li>Checklist de entrega</li>
+            <li>Templates de README y docs</li>
+          </ul>
+          <div class="std-category">Diseño</div>
+          <ul class="std-list">
+            <li>Design tokens compartidos</li>
+            <li>Componentes base reutilizables</li>
+            <li>Guidelines de UI/UX</li>
+          </ul>
+        </div>
+        <div class="std-col">
+          <div class="std-category">Comercial</div>
+          <ul class="std-list">
+            <li>Template de propuesta</li>
+            <li>Estructura de estimación</li>
+            <li>Contrato base</li>
+          </ul>
+          <div class="std-category">Cliente</div>
+          <ul class="std-list">
+            <li>Onboarding estándar</li>
+            <li>Template de reporte de avance</li>
+            <li>Retrospectiva de proyecto</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14 ESTANDARIZACIÓN — Beneficios (era 13) -->
+    <div class="slide" data-index="13">
+      <div class="section-tag">04 &mdash; Estandarización</div>
+      <div class="slide-header">
+        <h2>Por qué vale la pena</h2>
+      </div>
+      <div class="timeline-layout">
+        <div class="timeline-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-title">Velocidad</div>
+            <div class="tl-desc">No reinventar la rueda en cada proyecto. Arrancar desde una base sólida.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-title">Calidad consistente</div>
+            <div class="tl-desc">El nivel no depende de quién ejecuta. Depende del estándar.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-title">Escalabilidad de equipo</div>
+            <div class="tl-desc">Una persona nueva puede operar desde el primer día.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-title">Reputación</div>
+            <div class="tl-desc">Entregables prolijos y consistentes generan confianza con el cliente.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15 ESTANDARIZACIÓN — No rigidizar (era 14) -->
+    <div class="slide slide-questions" data-index="14">
+      <div class="section-tag">04 &mdash; Estandarización</div>
+      <div class="slide-header">
+        <h2>Qué no conviene rigidizar</h2>
+        <p class="slide-sub">Los estándares liberan, no restringen. Saber qué no estandarizar es igual de importante.</p>
+      </div>
+      <div class="questions-list">
+        <div class="question-item">
+          <span class="q-num">&#8594;</span>
+          <span class="q-text">El stack tecnológico: depende del proyecto, cliente y equipo disponible</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">&#8594;</span>
+          <span class="q-text">El diseño visual de cada producto: cada cliente tiene identidad propia</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">&#8594;</span>
+          <span class="q-text">La forma de resolver problemas técnicos complejos: dejar espacio al criterio</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">&#8594;</span>
+          <span class="q-text">Los procesos que aún no entendemos del todo: estandarizar antes de tiempo congela errores</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16 AUTOMATIZACIÓN — Oportunidades (era 15) -->
+    <div class="slide" data-index="15">
+      <div class="section-tag">05 &mdash; Automatización</div>
+      <div class="slide-header">
+        <h2>Dónde hay oportunidad real</h2>
+        <p class="slide-sub">Automatizar bien requiere saber qué no automatizar todavía</p>
+      </div>
+      <div class="auto-grid">
+        <div class="auto-item high">
+          <div class="auto-label">Alto impacto &middot; Bajo esfuerzo</div>
+          <ul>
+            <li>Reportes de avance automáticos</li>
+            <li>Notificaciones de estado</li>
+            <li>Backups programados</li>
+            <li>Tests en CI/CD</li>
+          </ul>
+        </div>
+        <div class="auto-item medium">
+          <div class="auto-label">Alto impacto &middot; Esfuerzo medio</div>
+          <ul>
+            <li>Documentación desde código</li>
+            <li>Onboarding de clientes</li>
+            <li>Research competitivo</li>
+            <li>Seguimiento de leads</li>
+          </ul>
+        </div>
+        <div class="auto-item low">
+          <div class="auto-label">Esperar &middot; Evaluar</div>
+          <ul>
+            <li>Generación de propuestas completas</li>
+            <li>Decisiones de arquitectura</li>
+            <li>Comunicación estratégica con clientes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17 AUTOMATIZACIÓN — IA real (era 16) -->
+    <div class="slide" data-index="16">
+      <div class="section-tag">05 &mdash; Automatización</div>
+      <div class="slide-header">
+        <h2>Dónde la IA aporta valor real hoy</h2>
+      </div>
+      <div class="cards-grid cards-3">
+        <div class="card card-accent">
+          <div class="card-title">Aceleración de código</div>
+          <div class="card-body">Boilerplate, refactoring, documentación inline. No reemplaza criterio: amplifica velocidad.</div>
+        </div>
+        <div class="card card-accent">
+          <div class="card-title">Research y síntesis</div>
+          <div class="card-body">Analizar documentos, comparar alternativas técnicas. Ahorra horas de trabajo manual.</div>
+        </div>
+        <div class="card card-accent">
+          <div class="card-title">Contenido y comunicación</div>
+          <div class="card-body">Posts de LinkedIn, resúmenes de proyecto, FAQ para clientes. Primer borrador en segundos.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18 AUTOMATIZACIÓN — Preguntas (era 17) -->
+    <div class="slide slide-questions" data-index="17">
+      <div class="section-tag">05 &mdash; Automatización</div>
+      <div class="slide-header">
+        <h2>Preguntas para decidir qué automatizar</h2>
+      </div>
+      <div class="questions-list">
+        <div class="question-item">
+          <span class="q-num">01</span>
+          <span class="q-text">¿Cuántas veces por semana lo hacemos? Si es menos de 2, probablemente no vale todavía.</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">02</span>
+          <span class="q-text">¿El error humano en esta tarea tiene alto impacto? Si sí, automatizar aunque sea poco frecuente.</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">03</span>
+          <span class="q-text">¿El proceso está bien definido? No automatizar lo que aún no entendemos bien.</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">04</span>
+          <span class="q-text">¿Cuánto tiempo tomaría construirlo vs. cuánto ahorra al mes? Calcular el ROI real.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 19 RECURSOS — Stack (era 18) -->
+    <div class="slide" data-index="18">
+      <div class="section-tag">06 &mdash; Recursos web</div>
+      <div class="slide-header">
+        <h2>Stack de recursos</h2>
+        <p class="slide-sub">Herramientas que ya probamos y valen la pena</p>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-category">
+          <div class="res-cat-title">Frontend</div>
+          <div class="res-items">
+            <span class="res-tag">Next.js</span>
+            <span class="res-tag">Tailwind CSS</span>
+            <span class="res-tag">shadcn/ui</span>
+            <span class="res-tag">Framer Motion</span>
+            <span class="res-tag">Radix UI</span>
+          </div>
+        </div>
+        <div class="resource-category">
+          <div class="res-cat-title">Backend</div>
+          <div class="res-items">
+            <span class="res-tag">Django</span>
+            <span class="res-tag">DRF</span>
+            <span class="res-tag">PostgreSQL</span>
+            <span class="res-tag">Redis</span>
+            <span class="res-tag">Celery</span>
+          </div>
+        </div>
+        <div class="resource-category">
+          <div class="res-cat-title">Infraestructura</div>
+          <div class="res-items">
+            <span class="res-tag">Docker</span>
+            <span class="res-tag">GitHub Actions</span>
+            <span class="res-tag">Nginx</span>
+            <span class="res-tag">Sentry</span>
+            <span class="res-tag">Grafana</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 20 RECURSOS — Diseño y productividad (era 19) -->
+    <div class="slide" data-index="19">
+      <div class="section-tag">06 &mdash; Recursos web</div>
+      <div class="slide-header">
+        <h2>Diseño y productividad</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-category">
+          <div class="res-cat-title">Diseño</div>
+          <div class="res-items">
+            <span class="res-tag">Figma</span>
+            <span class="res-tag">Google Fonts</span>
+            <span class="res-tag">Heroicons</span>
+            <span class="res-tag">Lucide</span>
+            <span class="res-tag">Unsplash</span>
+          </div>
+        </div>
+        <div class="resource-category">
+          <div class="res-cat-title">Animaciones</div>
+          <div class="res-items">
+            <span class="res-tag">GSAP</span>
+            <span class="res-tag">Lottie</span>
+            <span class="res-tag">CSS Transitions</span>
+            <span class="res-tag">Three.js</span>
+          </div>
+        </div>
+        <div class="resource-category">
+          <div class="res-cat-title">Productividad</div>
+          <div class="res-items">
+            <span class="res-tag">Linear</span>
+            <span class="res-tag">Notion</span>
+            <span class="res-tag">Claude Code</span>
+            <span class="res-tag">Cursor</span>
+            <span class="res-tag">GitHub Copilot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 21 RECURSOS — Para explorar (era 20) -->
+    <div class="slide slide-questions" data-index="20">
+      <div class="section-tag">06 &mdash; Recursos web</div>
+      <div class="slide-header">
+        <h2>Recursos para explorar juntos</h2>
+        <p class="slide-sub">¿Cuáles conocen? ¿Cuáles vale incorporar al stack?</p>
+      </div>
+      <div class="questions-list">
+        <div class="question-item">
+          <span class="q-num">&#8594;</span>
+          <span class="q-text"><strong>Storybook</strong> &mdash; documentación viva de componentes UI</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">&#8594;</span>
+          <span class="q-text"><strong>Playwright / Cypress</strong> &mdash; testing E2E como práctica estándar</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">&#8594;</span>
+          <span class="q-text"><strong>Mintlify / Docusaurus</strong> &mdash; documentación de producto con marca propia</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">&#8594;</span>
+          <span class="q-text"><strong>PostHog</strong> &mdash; product analytics open source para nuestros SaaS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 22 FUTURO — Señales (era 21) -->
+    <div class="slide" data-index="21">
+      <div class="section-tag">07 &mdash; Futuro</div>
+      <div class="slide-header">
+        <h2>Señales que no podemos ignorar</h2>
+      </div>
+      <div class="cards-grid cards-3">
+        <div class="card">
+          <div class="card-title">Agentes de IA</div>
+          <div class="card-body">Los agentes autónomos ya hacen tareas complejas. El rol del desarrollador está cambiando ahora.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Vibe coding</div>
+          <div class="card-body">El criterio técnico diferencia a quien sabe usar IA de quien sólo la usa. Eso nos posiciona.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Low-code avanzando</div>
+          <div class="card-body">El desarrollo simple está siendo absorbido. Hay que estar en la capa de complejidad real.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 23 FUTURO — Tendencias (era 22) -->
+    <div class="slide" data-index="22">
+      <div class="section-tag">07 &mdash; Futuro</div>
+      <div class="slide-header">
+        <h2>Tendencias: ¿sobrevaloradas o prometedoras?</h2>
+      </div>
+      <div class="two-col-layout">
+        <div class="col-block col-warn">
+          <div class="col-block-title">Sobrevaloradas</div>
+          <ul class="block-list">
+            <li>Blockchain para todo</li>
+            <li>Metaverso corporativo</li>
+            <li>IA reemplazando todo el equipo</li>
+            <li>Microservicios desde el día uno</li>
+          </ul>
+        </div>
+        <div class="col-block col-yes">
+          <div class="col-block-title">Prometedoras</div>
+          <ul class="block-list">
+            <li>Agentes autónomos especializados</li>
+            <li>AI-native products</li>
+            <li>Edge computing</li>
+            <li>Observabilidad inteligente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 24 FUTURO — Oportunidades (era 23) -->
+    <div class="slide" data-index="23">
+      <div class="section-tag">07 &mdash; Futuro</div>
+      <div class="slide-header">
+        <h2>Oportunidades para Atelion (1&ndash;2 años)</h2>
+      </div>
+      <div class="principles-grid">
+        <div class="principle-item">
+          <div class="p-number">01</div>
+          <div class="p-content">
+            <div class="p-title">SaaS verticales con IA integrada</div>
+            <div class="p-desc">Productos para industrias donde ya tenemos contexto y experiencia.</div>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="p-number">02</div>
+          <div class="p-content">
+            <div class="p-title">Automatización de operaciones</div>
+            <div class="p-desc">Vender capacidad de sistematizar procesos, no solo desarrollar software.</div>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="p-number">03</div>
+          <div class="p-content">
+            <div class="p-title">Marca técnica en LinkedIn</div>
+            <div class="p-desc">El equipo como referente. Contenido que demuestra criterio, no solo skills.</div>
+          </div>
+        </div>
+        <div class="principle-item">
+          <div class="p-number">04</div>
+          <div class="p-content">
+            <div class="p-title">Consultoría de arquitectura</div>
+            <div class="p-desc">Ayudar a empresas a tomar mejores decisiones técnicas antes de construir.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 25 FUTURO — Conversación (era nueva) -->
+    <div class="slide slide-questions" data-index="24">
+      <div class="section-tag">07 &mdash; Futuro</div>
+      <div class="slide-header">
+        <h2>Conversación abierta</h2>
+        <p class="slide-sub">¿Qué tendencias ya estamos viendo en nuestros proyectos?</p>
+      </div>
+      <div class="questions-list">
+        <div class="question-item">
+          <span class="q-num">01</span>
+          <span class="q-text">¿Qué tecnología nueva nos entusiasmó más en los últimos 6 meses?</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">02</span>
+          <span class="q-text">¿Qué tareas del equipo creemos que en 2 años van a ser obsoletas?</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">03</span>
+          <span class="q-text">¿Qué habilidad queremos desarrollar colectivamente como equipo este año?</span>
+        </div>
+        <div class="question-item">
+          <span class="q-num">04</span>
+          <span class="q-text">¿Qué producto propio de Atelion nos gustaría ver en 12 meses?</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 26 CIERRE (era 24) -->
+    <div class="slide slide-closing" data-index="25" data-dark="true">
+      <div class="closing-content">
+        <div class="closing-badge">Primera Jornada Estratégica &middot; Mayo 2026</div>
+        <h2 class="closing-title">El hábito empieza acá.</h2>
+        <div class="closing-divider"></div>
+        <div class="closing-topics">
+          <span>Branding</span><span>&middot;</span>
+          <span>Benchmark</span><span>&middot;</span>
+          <span>Arquitectura</span><span>&middot;</span>
+          <span>Estandarización</span><span>&middot;</span>
+          <span>Automatización</span><span>&middot;</span>
+          <span>Recursos</span><span>&middot;</span>
+          <span>Futuro</span>
+        </div>
+        <div class="closing-logo">
+          <img src="logo_atelion.png" alt="Atelion" class="closing-logo-img" onerror="this.style.display='none'">
+        </div>
+        <div class="closing-brand">ATELION</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="keyboard-hint" id="kb-hint">&#8592; &#8594; para navegar &nbsp;&middot;&nbsp; Esc para inicio</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
