@@ -212,16 +212,17 @@ Marcar el bloque técnico como cerrado antes de pasar a procesos internos.
 ## Hoja 16 - Sistemas internos (Main)
 
 ### Objetivo
-Revisar cómo operamos internamente: herramientas, procesos y decisiones repetidas.
+Mostrar el giro: dejamos de depender de herramientas de terceros y construimos las propias, de uso diario por el equipo (dogfooding).
 
 ### Mensaje clave
-El estándar libera energía para lo que realmente cambia. Menos decisiones repetidas, más foco en lo que importa de cada proyecto.
+De usar herramientas a construir las nuestras. No reinventamos lo simple y universal; convertimos en producto propio lo que usamos cada día — y lo probamos antes de venderlo.
 
-Herramientas: Atelion Projects, Notion, GitHub Actions, Claude Code, Cursor, Mintlify.
+En uso hoy: Atelion Projects, Hermes, Intelligence Hub, Atelion Plugin.
+En el roadmap: Finanzas & Contabilidad, CRM, CI/CD interno, Editor, Argos Scraper, RepTrack.
 
 ### Conversación
-¿Qué proceso repetimos más sin tenerlo documentado?
-¿Dónde se va más energía en decisiones que deberían estar resueltas?
+¿Qué herramienta externa nos conviene internalizar primero?
+¿Cuál de nuestros productos internos ya está listo para venderse?
 
 ---
 
@@ -259,7 +260,7 @@ Abrir la conversación sobre las apuestas estratégicas de Atelion en los próxi
 ### Mensaje clave
 Las apuestas no son tendencias. Son posiciones. Donde ponemos el foco hoy define qué somos en 12 meses.
 
-Apuestas: SaaS verticales con IA, automatización operativa, arquitectura como consultoría, marca técnica en LinkedIn.
+Apuestas: agentes verticales con IA (vendemos resultados, no asientos), dogfooding como producto (lo que usamos, lo vendemos), autoridad para IA / GEO (ser citados, no solo rankear), arquitectura como estándar (interoperable y MCP-native), marca técnica (LinkedIn + GitHub como prueba).
 
 ### Conversación
 ¿Cuál de las apuestas genera más convicción interna?
